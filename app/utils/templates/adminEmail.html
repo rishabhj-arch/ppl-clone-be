@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@500&display=swap"
+        rel="stylesheet">
+    <title>Template</title>
+    <style>
+        @media screen and (max-width: 640px) {
+            * {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .img-logo {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            .img-cover {
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            .section {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .column {
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .column label,
+            .column p {
+                margin-left: 0 !important;
+                font-size: 12px !important;
+            }
+
+            .content {
+                font-size: 12px !important;
+            }
+
+            .column label {
+                margin-bottom: 10px !important;
+            }
+
+            .column p {
+                font-size: 12px !important;
+                height: auto;
+                margin-bottom: 0 !important;
+            }
+
+            .image {
+                width: 100%;
+                padding: 20.5px 0 !important;
+            }
+
+            .test {
+                padding: 20px 0px 0 !important;
+            }
+
+            .medium {
+                padding-top: 0 !important;
+            }
+
+            .details {
+                padding-top: 20px !important;
+            }
+
+            .mobileView {
+                margin-left: 20px !important;
+                margin-right: 20px !important;
+                margin-bottom: 40px !important;
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #E3E3E3 !important; font-family: Montserrat, sans-serif; box-sizing: border-box;">
+
+    <!-- Logo Section -->
+    <!-- <div style="max-width: 586px; margin: 0 27px;"> -->
+    <div class="mobileView"
+        style="max-width: 586px; margin: 60px auto 60px auto; padding-top: 60px; padding-bottom: 60px;">
+        <!-- Content Section with Background Image -->
+
+        <div>
+            <div class="image logoimage" style="padding: 20.5px 0; text-align: center;  background-color: #3B3C43 !important;">
+                <img src="https://storage.googleapis.com/staging.able-bazaar-443904-k8.appspot.com/PPLAWYERS-EMAIL-IMAGES/PPL_logo.png"
+                    alt="company logo" class="img-logo" style="width: 242.84px; height: 14.28px;" />
+            </div>
+            <div class="section" style="background-color: #FFFFFF !important;">
+
+                <!-- User Info Fields -->
+                <div style="display: block; gap: 10px;">
+
+                    <div class="test column" style="display: block; width: 100%; font-size: 0; padding: 20px 0px;">
+                        <!-- firstName & lastName Columns -->
+                        <div class="column"
+                            style="width: 50%; vertical-align: top; font-size: 14px; display: inline-block;">
+                            <label style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">First
+                                Name</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%;">
+                                <%= firstName %>
+                            </p>
+                        </div>
+                        <div class="column details"
+                            style="width: 50%; vertical-align: top; font-size: 14px; display: inline-block;">
+                            <label style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">Last
+                                Name</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%">
+                                <%= lastName %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column details" style="display: block; width: 100%; font-size: 0;">
+                        <!-- Email & Telephone Columns -->
+                        <div class="column"
+                            style="width: 50%; vertical-align: top; font-size: 14px; display: inline-block;">
+                            <label
+                                style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">Email</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%">
+                                <%= email %>
+                            </p>
+                        </div>
+                        <div class="test column"
+                            style="width: 50%; vertical-align: top; font-size: 14px; display: inline-block;">
+                            <label
+                                style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">Telephone</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%">
+                                <%= telephone %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="details column medium"
+                        style="display: block; width: 100%; font-size: 0; padding-top: 20px;">
+                        <!-- Referred By & Referred To Lawyer Columns -->
+                        <div class="column"
+                            style="width: 100%; vertical-align: top; font-size: 14px; display: inline-block; ">
+                            <label style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">Were you
+                                referred to us? If so, who referred you?</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%">
+                                <%= referredBy %>
+                            </p>
+                        </div>
+                        <div class="details column medium"
+                            style="width: 100%; vertical-align: top; font-size: 14px; display: inline-block; padding-top: 20px;">
+                            <label style="display: block; font-weight: 500; color: #717171; margin-left: 20px;">Were you
+                                referred to a particular lawyer? If so, who?</label>
+                            <p
+                                style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; margin-left: 20px; line-height: 100%">
+                                <%= referredToLawyer %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="details column medium" style="padding: 20px 165px 0px 20px;">
+                        <label style="display: block; font-size: 14px; font-weight: 500; color: #717171;">Would you
+                            prefer
+                            to be contacted by:</label>
+                        <p
+                            style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; line-height: 100%">
+                            <%= preferredContactMethod %>
+                        </p>
+                    </div>
+
+                    <div class="column details" style="padding: 20px; padding-bottom: 20px !important;">
+                        <label
+                            style="display: block; font-size: 14px; font-weight: 500; color: #717171;">Message</label>
+                        <p class="truncate"
+                            style="margin: 0; margin-top: 10px; font-family: Poppins, sans-serif; color: #000000; font-size: 14px; font-weight: 500; line-height: 21px; width: 100%; min-height: 102px;">
+                            <%= message %>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- </div> -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>
