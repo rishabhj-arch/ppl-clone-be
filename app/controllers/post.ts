@@ -65,9 +65,29 @@ const formatter = new Intl.DateTimeFormat("en-AU", {
   day: "2-digit",
 });
 
+const normalizeTags = (tags: unknown): string[] => {
+  const tagList = Array.isArray(tags) ? tags : [tags];
+  const seen = new Set<string>();
+
+  return tagList.reduce<string[]>((uniqueTags, tag) => {
+    if (typeof tag !== "string") return uniqueTags;
+
+    const normalizedTag = tag.trim();
+    const key = normalizedTag.toLowerCase();
+
+    if (normalizedTag && !seen.has(key)) {
+      seen.add(key);
+      uniqueTags.push(normalizedTag);
+    }
+
+    return uniqueTags;
+  }, []);
+};
+
 export const createPost = async (req, res: Response): Promise<void> => {
   try {
     const { name, date, title, tag, description, status } = req.body;
+    const normalizedTags = normalizeTags(tag);
 
     if (!name) {
       res
@@ -87,7 +107,7 @@ export const createPost = async (req, res: Response): Promise<void> => {
         .json({ success: false, message: "Please enter a title." });
       return;
     }
-    if (!tag) {
+    if (normalizedTags.length === 0) {
       res.status(400).json({ success: false, message: "Please add a tag." });
       return;
     }
@@ -134,7 +154,7 @@ export const createPost = async (req, res: Response): Promise<void> => {
       name,
       date: inputDateOnly,
       title,
-      tag,
+      tag: normalizedTags,
       description,
       status,
       user: req.user._id,
@@ -167,6 +187,7 @@ export const editPost = async (req, res: Response): Promise<void> => {
   try {
     const { postId } = req.params;
     const { name, date, title, tag, description, status } = req.body;
+    const normalizedTags = normalizeTags(tag);
 
     const post = await Post.findById(postId);
     if (!post) {
@@ -189,7 +210,7 @@ export const editPost = async (req, res: Response): Promise<void> => {
         .status(400)
         .json({ success: false, message: "Please enter a title." });
       return;
-    } else if (!tag) {
+    } else if (normalizedTags.length === 0) {
       res.status(400).json({ success: false, message: "Please add a tag." });
       return;
     } else if (!description) {
@@ -267,7 +288,7 @@ export const editPost = async (req, res: Response): Promise<void> => {
         name,
         date: inputDateOnly,
         title,
-        tag,
+        tag: normalizedTags,
         description,
         status,
         updatedAt: new Date(),
